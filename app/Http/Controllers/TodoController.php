@@ -54,7 +54,10 @@ class TodoController extends Controller
 
     public function imageUpload(Request $request)
     {
-        return $request->all();
+        if($request()->hasFile('image'))
+        {
+
+        }
     }
 
     /**
