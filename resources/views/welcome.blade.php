@@ -44,37 +44,44 @@
             <form class="flex flex-col" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="name">Name</label>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="name">{{ __('Name') }}</label>
                     <input type="text" id="name" name="name" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" value={{ old('name') }}>
+                    @error('name')
+                        <div class="text-red-700 bg-gray-200" role="alert">
+                            <span class="block sm:inline">{{ $message }}</span>
+                        </div> 
+                    @enderror
+                    
                 </div>
+                
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Email</label>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">{{ __('Email') }}</label>
                     <input type="text" id="email" name="email" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" value={{ old('email') }}>
                 </div>
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="number">Number</label>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="number">{{ __('Number') }}</label>
                     <input type="text" id="number" name="number" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" value={{ old('number') }}>
                 </div>
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">{{ __('Password') }}</label>
                     <input type="password" id="password" name="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" value={{ old('password') }}>
                 </div>
                 <div class="flex justify-end">
-                    <a href="#" class="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">Forgot your password?</a>
+                    <a href="#" class="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">{{ __('Forgot your password?') }}</a>
                 </div>
-                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">{{ __('Sign In') }}</button>
             </form>
         </section>
     </main>
 
     <div class="max-w-lg mx-auto text-center mt-12 mb-6">
-        <p class="text-white">Don't have an account? <a href="#" class="font-bold hover:underline">Sign up</a>.</p>
+        <p class="text-white">{{ ("Don't have an account?") }} <a href="#" class="font-bold hover:underline">{{ __('Sign up') }}</a>.</p>
     </div>
 
     <footer class="max-w-lg mx-auto flex justify-center text-white">
-        <a href="#" class="hover:underline">Contact</a>
+        <a href="#" class="hover:underline">{{ __('Contact') }}</a>
         <span class="mx-3">•</span>
-        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">{{ __('Privacy') }}</a>
     </footer>
 </body>
 </html>

@@ -54,10 +54,21 @@ class TodoController extends Controller
 
     public function imageUpload(Request $request)
     {
-        if($request()->hasFile('image'))
+        if($request->hasFile('image'))
         {
-
+            $images = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('image','images'.'/'.$images);
+            $image = Image::create([
+                'image' =>$images
+            ]);
         }
+
+        return back();
+    }
+
+    public function contentView()
+    {
+        return $images = Image::select('image')->get();
     }
 
     /**

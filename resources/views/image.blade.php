@@ -20,15 +20,15 @@
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="#">
-            <h1 class="text-4xl font-bold text-white text-center">Startup</h1>
+            <h1 class="text-4xl font-bold text-white text-center">{{ __('Startup') }}</h1>
         </a>
 
     </header>
     
     <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
-            <h3 class="font-bold text-2xl">Welcome to Startup</h3>
-            <p class="text-gray-600 pt-2">Sign in to your account.</p>
+            <h3 class="font-bold text-2xl">{{ __('Welcome to Startup') }}</h3>
+            <p class="text-gray-600 pt-2">{{ __('Sign in to your account.') }}</p>
 
         </section>
         <section class="mt-10">
@@ -38,7 +38,7 @@
                    
                     <div class="max-w-2xl rounded-lg shadow-xl bg-gray-50">
                         <div class="m-4">
-                            <label class="inline-block mb-2 text-gray-500">File Upload</label>
+                            <label class="inline-block mb-2 text-gray-500">{{ __('File Upload') }}</label>
                             <div class="flex items-center justify-center w-full">
                                 <label
                                     class="flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300">
@@ -52,14 +52,14 @@
                                         </svg>
                                        
                                         <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                            Attach a file</p>
+                                            {{ __('Attach a file') }}</p>
                                     </div>
                                     <input type="file" class="opacity-0" name="image" onchange="loadFile(event)" id="image"/>
                                 </label>
                             </div>
                         </div>
                         <div class="flex justify-center p-2">
-                            <button class="w-full px-4 py-2 text-white bg-blue-500 rounded shadow-xl" type="submit">Create</button>
+                            <button class="w-full px-4 py-2 text-white bg-blue-500 rounded shadow-xl" type="submit">{{ __('Create') }}</button>
                         </div>
                     </div>
                 </form>
@@ -69,13 +69,13 @@
     </main>
 
     <div class="max-w-lg mx-auto text-center mt-12 mb-6">
-        <p class="text-white">Don't have an account? <a href="#" class="font-bold hover:underline">Sign up</a>.</p>
+        <p class="text-white">{{ __("Don't have an account?") }} <a href="#" class="font-bold hover:underline">{{ __('Sign up') }}</a>.</p>
     </div>
 
     <footer class="max-w-lg mx-auto flex justify-center text-white">
-        <a href="#" class="hover:underline">Contact</a>
+        <a href="#" class="hover:underline">{{ __('Contact') }}</a>
         <span class="mx-3">•</span>
-        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">{{ __('Privacy') }}</a>
     </footer>
 
 

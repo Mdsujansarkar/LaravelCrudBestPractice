@@ -26,4 +26,4 @@ Route::post('register', [TodoController::class, 'create'])->name('register');
 Route::get('register/image', [TodoController::class, 'image'])->name('image');
 
 Route::post('register/image/upload', [TodoController::class, 'imageUpload'])->name('image.upload');
-
+Route::get('content', [TodoController::class, 'contentView'])->name('content');
